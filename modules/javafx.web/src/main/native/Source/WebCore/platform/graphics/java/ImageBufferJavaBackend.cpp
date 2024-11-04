@@ -79,7 +79,7 @@ std::unique_ptr<ImageBufferJavaBackend> ImageBufferJavaBackend::create(
         return nullptr;
     }
 
-    auto context = makeUnique<GraphicsContextJava>(new PlatformContextJava(wcRenderQueue, true));
+    auto context = makeUnique<GraphicsContextJava>(new PlatformContextJava(wcRenderQueue, false));
 
     auto platformImage = ImageJava::create(image, context->platformContext()->rq_ref(),
         backendSize.width(), backendSize.height());
